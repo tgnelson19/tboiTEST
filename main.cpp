@@ -83,6 +83,25 @@ int main(){
         if (Keyboard::isKeyPressed(Keyboard::W)) { c->isMoving = true; c->dy = 1; }
         else if (Keyboard::isKeyPressed(Keyboard::S)) { c->isMoving = true; c->dy = -1; }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         for (auto i = entities.begin(); i != entities.end();) {
             Entity *e = *i; //*i is an Entity pointer, using * on an iterator returns the element from the list
             e->update(); // Uses polymorphism to call the proper update method
