@@ -4,7 +4,8 @@ project(tboiTEST)
 set(CMAKE_CXX_STANDARD 14)
 #Configure files here
 
-
+configure_file(images/penguinCut.png images/penguinCut.png COPYONLY)
+configure_file(images/tbioBackground.png images/tbioBackground.png COPYONLY)
 
 set(EXECUTABLE_NAME "tboiTEST")
 
