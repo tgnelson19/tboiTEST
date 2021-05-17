@@ -9,7 +9,7 @@ configure_file(images/tbioBackground.png images/tbioBackground.png COPYONLY)
 
 set(EXECUTABLE_NAME "tboiTEST")
 
-add_executable(${EXECUTABLE_NAME} main.cpp "Classes/Entity.cpp" "Classes/Entity.h" Classes/Character.cpp Classes/Character.h Classes/Tear.cpp Classes/Tear.h)
+add_executable(${EXECUTABLE_NAME} main.cpp "Classes/Entity.cpp" "Classes/Entity.h" Classes/Character.cpp Classes/Character.h Classes/Tear.cpp Classes/Tear.h Classes/CharacterStats.cpp Classes/CharacterStats.h)
 
 # Detect and add SFML
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})

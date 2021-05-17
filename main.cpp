@@ -3,9 +3,11 @@
 #include <iostream>
 #include <list>
 #include <SFML/Graphics.hpp>
+#include "Classes/CharacterStats.h"
 #include "Classes/Entity.h"
 #include "Classes/Character.h"
 #include "Classes/Tear.h"
+
 
 using namespace sf;
 
@@ -51,30 +53,21 @@ int main(){
                 app.close(); // When the window is closed, close everything
 
             if (event.type == Event::KeyPressed) {
-                if (event.key.code == Keyboard::Left) { // When space is pressed
-                    Tear *t = new Tear(); // Allocate memory for a new bullet
-                    t->settings(penguin, c->x, c->y, 180); // Set it's angle to the angle you're facing
-                    t->speed = currShotSpeed;
-                    entities.push_back(t); // And put it into the entities list
+                Tear *t = new Tear();
+                if (event.key.code == Keyboard::Left) {
+                    t->settings(penguin, c->x, c->y, 180);
                 }
-                else if (event.key.code == Keyboard::Right) { // When space is pressed
-                    Tear *t = new Tear(); // Allocate memory for a new bullet
-                    t->settings(penguin, c->x, c->y, 0); // Set it's angle to the angle you're facing
-                    t->speed = currShotSpeed;
-                    entities.push_back(t); // And put it into the entities list
+                else if (event.key.code == Keyboard::Right) {
+                    t->settings(penguin, c->x, c->y, 0);
                 }
-                else if (event.key.code == Keyboard::Up) { // When space is pressed
-                    Tear *t = new Tear(); // Allocate memory for a new bullet
-                    t->settings(penguin, c->x, c->y, 90); // Set it's angle to the angle you're facing
-                    t->speed = currShotSpeed;
-                    entities.push_back(t); // And put it into the entities list
+                else if (event.key.code == Keyboard::Up) {
+                    t->settings(penguin, c->x, c->y, 90);
                 }
-                else if (event.key.code == Keyboard::Down) { // When space is pressed
-                    Tear *t = new Tear(); // Allocate memory for a new bullet
-                    t->settings(penguin, c->x, c->y, 270); // Set it's angle to the angle you're facing
-                    t->speed = currShotSpeed;
-                    entities.push_back(t); // And put it into the entities list
+                else if (event.key.code == Keyboard::Down) {
+                    t->settings(penguin, c->x, c->y, 270);
                 }
+                t->speed = currShotSpeed;
+                entities.push_back(t);
             }
         }
         c->isMoving = false; c->dx = 0; c->dy = 0;
