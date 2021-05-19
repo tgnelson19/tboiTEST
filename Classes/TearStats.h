@@ -12,6 +12,8 @@ public:
 
     TearStats(){}
 
+    void setTearStats(float ss, float d, float r){ shotSpeed = ss; damage = d; range = r; }
+
 };
 
 

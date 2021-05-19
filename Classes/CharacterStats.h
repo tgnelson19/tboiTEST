@@ -14,6 +14,8 @@ public:
 
     CharacterStats(){}
 
+    void setCharStats(float ms, float td){ moveSpeed = ms; tearDelay = td; }
+
 };
 
 

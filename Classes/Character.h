@@ -10,6 +10,8 @@ class Character : public Entity {
 public:
 
     bool isMoving;
+    bool isShooting;
+    char shotDirection;
     float dx, dy;
 
     Character(){ name = "character"; isMoving = false;}
