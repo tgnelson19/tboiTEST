@@ -5,16 +5,18 @@
 #ifndef TBOITEST_TEAR_H
 #define TBOITEST_TEAR_H
 #include "Entity.h"
+#include "TearStats.h"
 
 class Tear : public Entity{
 public:
-    Tear() {
-        name = "tear";
-    }
+
+    TearStats tts;
+
+    Tear() { name = "tear"; }
 
     void update() {
-        x += speed * cos(dtr*angle);
-        y -= speed * sin(dtr*angle);
+        x += tts.shotSpeed * cos(dtr*angle);
+        y -= tts.shotSpeed * sin(dtr*angle);
 
         if (x > W || x < 0 || y > H || y < 0) {
             isAlive = false; // If it hits a wall, kills the bullet

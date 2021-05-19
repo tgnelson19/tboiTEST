@@ -4,15 +4,15 @@
 
 #ifndef TBOITEST_CHARACTERSTATS_H
 #define TBOITEST_CHARACTERSTATS_H
+#include "TearStats.h"
 
 
 class CharacterStats {
 public:
-    float moveSpeed, tearDelay, shotSpeed, damage, range;
+    float moveSpeed, tearDelay;
+    TearStats currts;
 
-    CharacterStats(){
-
-    }
+    CharacterStats(){}
 
 };
 
