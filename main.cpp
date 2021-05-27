@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <list>
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include "Classes/CharacterStats.h"
 #include "Classes/Entity.h"
@@ -33,7 +34,7 @@ int main(){
 
     /// Entity List
 
-    std::list<Entity *> entities;
+    std::vector<Entity *> entities;
 
     ///Door creation
 
@@ -95,9 +96,24 @@ int main(){
 
         ///Collision Logic
 
-        for (auto i = entities.begin(); i != entities.end();) {
-            std::list<FloatRect> hitBoxes;
+        std::vector<Rect<float>> hitBoxes;
 
+        for (auto i = entities.begin(); i != entities.end();) { Entity *e = *i; hitBoxes.push_back(e->sprite.getGlobalBounds()); }
+
+        int icnt = 0, jcnt = 0;
+        for (auto i = hitBoxes.begin(); i != hitBoxes.end();){
+            for (auto j = hitBoxes.begin(); j != hitBoxes.end();){
+                if(i->intersects(*j)){
+                    if (entities.at(icnt)->name == "char" && entities.at(jcnt)->name == "door"){
+
+                    }
+
+                }
+
+
+                jcnt += 1;
+            }
+            jcnt = 0; icnt += 1;
         }
 
 
